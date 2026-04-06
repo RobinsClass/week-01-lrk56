@@ -53,9 +53,7 @@ import random
 # ---------------------------------------------------------------------------
 cmds.file(new=True, force=True)
 
-# ---------------------------------------------------------------------------
 # Ground Plane
-# ---------------------------------------------------------------------------
 
 ground_width = 50
 ground_depth = 50
@@ -72,10 +70,8 @@ ground = cmds.polyPlane(
 # Move the ground plane so its top surface sits at y=0.
 cmds.move(0, ground_y_position, 0, ground)
 
-# ---------------------------------------------------------------------------
 # Example Object 1 -- a simple building (cube)
 # This is provided as an example. Study it, then add your own objects below.
-# ---------------------------------------------------------------------------
 
 building_width = 4.2
 building_height = 9
@@ -92,14 +88,7 @@ building = cmds.polyCube(
 
 cmds.move(building_x, building_height / 2.0, building_z, building)
 
-# ---------------------------------------------------------------------------
 # Object 2 : A tree (cylinder for trunk, and a sphere for foliage)
-# Create a second object using a DIFFERENT primitive type than the cube above.
-# Remember to:
-#   - Use descriptive variable names for size and position.
-#   - Name the object meaningfully with the 'name' parameter or cmds.rename().
-#   - Position it so it sits on the ground (not floating or buried).
-# ---------------------------------------------------------------------------
 
 # Setting the variables for the trunk dimensions and position.
 tree1_trunk_height = random.randint(2,7) # Random height for the first tree trunk to add some variation.
@@ -133,9 +122,7 @@ tree1_foliage = cmds.polySphere(
 # Moving the foliage so that it sits on top of the trunk.
 cmds.move(tree1_foliage_x, tree1_foliage_y, tree1_foliage_z, tree1_foliage)
 
-# ---------------------------------------------------------------------------
 # Object 3 : A second tree (A cylinder for trunk, and a cone for foliage)
-# ---------------------------------------------------------------------------
 
 # Using the same type for the trunk as the first tree, but changing the foliage to a cone for variety.
 tree2_trunk_height = random.randint(2,6) # Random height for the second tree trunk to add some variation.
@@ -169,9 +156,7 @@ tree2_foliage = cmds.polyCone(
 # Moving the foliage so that it sits on top of the trunk.
 cmds.move(tree2_foliage_x, tree2_foliage_y, tree2_foliage_z, tree2_foliage)
 
-# ---------------------------------------------------------------------------
 # Object 4: An awning for the building (A polycube rotated to be a sloped roof with cylindrical columns under it.)
-# ---------------------------------------------------------------------------
 
 #Setting variables for the awning dimensions and position.
 awning_width = 4
@@ -229,9 +214,7 @@ column2 = cmds.polyCylinder(
 cmds.move(column2_x, column_height / 2.0, column2_z,
             column2)
 
-# ---------------------------------------------------------------------------
 # Object 5: A car (polyCubes for the body, and rotated cylinders for the wheels)
-# ---------------------------------------------------------------------------
 
 # Setting the variables for the wheels dimensions and position.
 wheel_radius = 0.5
@@ -375,10 +358,7 @@ cab_divider = cmds.polyCube(
 # Moving the divider so it sits between the front and back cabs and is positioned correctly.
 cmds.move(divider_x, divider_y, divider_z, cab_divider)
 
-# ---------------------------------------------------------------------------
 # (Optional): Add more objects to make your scene more interesting!
-# Consider: trees, lamp posts, fences, vehicles, animals, etc.
-# ---------------------------------------------------------------------------
 
 #First, adding a road that cuts in front of the building using a polyCube.
 road_width = 7
